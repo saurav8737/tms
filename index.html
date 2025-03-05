@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Time Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: grey;
+            color: white;
+            font-size: 18px;
+            position: relative;
+        }
+        .top-right {
+            text-align: right;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 90%;
+            max-width: 1400px;
+            margin: 20px auto;
+            gap: 20px;
+        }
+        .section {
+            flex: 1;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            min-width: 500px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: grey;
+            color: white;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 5px;
+            background: red;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkred;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3>TIME MANAGEMENT SYSTEM</h3><br>
+        <div class="top-right">
+            <span id="timer">00:00:00</span>  
+            <br>
+            <span id="date-display"></span>  
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h1>Welcome <span id="user-name"></span>!</h1>
+            <label for="subject">Select Subject:</label>
+            <select id="subject">
+                <option value="Mathematics">Mathematics</option>
+                <option value="English">English</option>
+                <option value="Reasoning">Reasoning</option>
+                <option value="GS">General Studies</option>
+                <option value="Physics">Physics</option>
+                <option value="Chemistry">Chemistry</option>
+                <option value="Biology">Biology</option>
+                <option value="Geography">Geography</option>
+                <option value="Polity">Polity</option>
+                <option value="History">History</option>
+                <option value="Economics">Economics</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Current Affairs">Current Affairs</option>
+            </select>
+            <button id="start-btn">Start</button>
+            <button id="stop-btn">Stop</button>
+            <button id="view-report-btn" onclick="window.location.href='report.html'">View Monthly Report</button>
+            <button class="logout" id="logout-btn">Logout</button>
+        </div>
+        <div class="section">
+            <h1>Today's Report</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Time Spent</th>
+                    </tr>
+                </thead>
+                <tbody id="subject-times"></tbody>
+            </table>
+            <button id="reset-today">Reset Today's Report</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Time Management System | Designed by Saurav Kumar</p>
+        <p>Mob:+91-9570065413, eMail: sauravkumar1668@gmail.com</p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
